@@ -1,119 +1,26 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
-  background: #0a0a0a;
-  color: #e5e5e5;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, monospace;
-}
-
-/* Real 404 look */
-.error {
-  height: 100vh;
-  padding: 40px;
-}
-
-.error h1 {
-  font-size: 96px;
-  margin: 0;
-  font-weight: 600;
-}
-
-.subtitle {
-  font-size: 20px;
-  margin-top: 8px;
-}
-
-.system {
-  margin-top: 24px;
-  color: #9aa0a6;
-  font-size: 14px;
-}
-
-/* Hidden storytelling sections */
-section {
-  min-height: 100vh;
-  padding: 80px 40px;
-}
-
-.log img {
-  width: 260px;
-  border-radius: 6px;
-  margin-bottom: 12px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
-}
-
-.log.visible img {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hidden {
-  display: none;
-}
-
-.final {
-  font-family: monospace;
-}
-
-.cursor {
-  animation: blink 1s steps(2, start) infinite;
-}
-
-@keyframes blink {
-  to {
-    visibility: hidden;
-  }
-}
-
-.hint {
-  margin-top: 40px;
-  font-size: 12px;
-  color: #5f6368;
-  opacity: 0;
-  animation: fadeIn 1s ease forwards;
-  animation-delay: 4s;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-.write {
-  min-height: 100vh;
-  padding: 80px 40px;
-  font-family: monospace;
-}
-
-.prompt {
-  color: #9aa0a6;
-  margin-bottom: 12px;
-}
-
-#terminal-input {
-  width: 100%;
-  max-width: 700px;
-  min-height: 180px;
-  padding: 16px;
-  border: 1px solid #2e2e2e;
   background: black;
-  color: #00ff9c;
+  color: #e5e5e5;
   font-family: monospace;
-  font-size: 14px;
-  outline: none;
-  caret-color: #00ff9c;
+  margin: 0;
 }
 
-.system-msg {
-  margin-top: 12px;
+.page {
+  max-width: 700px;
+  padding: 80px 40px;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+.muted {
   color: #9aa0a6;
-  font-size: 12px;
 }
 
-
+.link {
+  display: inline-block;
+  margin-top: 40px;
+  color: #00ff9c;
+  text-decoration: none;
+}
