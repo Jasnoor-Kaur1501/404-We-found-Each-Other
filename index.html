@@ -1,54 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>404 Not Found</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>404</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <main class="error">
-    <h1>404</h1>
-    <p class="subtitle">This page could not be found.</p>
-   <p id="system-line" class="system">
-  The requested URL was not found on this server<span class="cursor">_</span>
-</p>
-    <p class="hint">Try scrolling.</p>
-  </main>
-
-  <!-- Hidden content -->
-  <section class="log hidden">
-    <img src="images/1.jpg" />
-    <p>LOG_042: Reconnected after silence.</p>
-  </section>
-
-  <section class="log hidden">
-    <img src="images/2.jpg" />
-    <p>LOG_117: Stability not expected.</p>
-  </section>
-
-  <section class="log hidden">
-    <img src="images/3.jpg" />
-    <p>LOG_256: Still running.</p>
-  </section>
-
-<section class="write hidden">
-  <p class="prompt">SYSTEM INPUT ENABLED</p>
-  <div id="terminal-input" contenteditable="true"></div>
-  <p id="system-response" class="system-msg"></p>
+<section class="page">
+  <h1>404</h1>
+  <p>This page could not be found.</p>
+  <p class="muted">Unexpected persistence detected.</p>
+  <a href="logs.html" class="link">View system logs →</a>
 </section>
-
-  <section class="final hidden">
-    <p>STATUS: STABLE</p>
-    <p>UPTIME: 365 DAYS</p>
-    <p id="typed"></p>
-  </section>
-  
-
-  <audio id="bg-music" loop>
-  <source src="song.mp3" type="audio/mpeg">
-</audio>
-
-  <script src="script.js"></script>
 </body>
 </html>
