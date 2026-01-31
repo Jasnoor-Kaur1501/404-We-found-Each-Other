@@ -103,12 +103,7 @@ terminalInput.addEventListener("input", () => {
   }
 });
 
-// 🔹 Lock input permanently when user clicks away
-terminalInput.addEventListener("blur", () => {
-  terminalInput.setAttribute("contenteditable", "false");
-  localStorage.setItem("system_input_locked", "true");
-  systemResponse.textContent = "INPUT SAVED. NO FURTHER CHANGES ALLOWED.";
-});
+
 
 
 });
