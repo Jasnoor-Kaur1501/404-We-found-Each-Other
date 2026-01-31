@@ -72,4 +72,23 @@ window.addEventListener("scroll", () => {
   }
 });
 
+  const terminalInput = document.getElementById("terminal-input");
+const systemResponse = document.getElementById("system-response");
+
+terminalInput.addEventListener("input", () => {
+  const length = terminalInput.innerText.length;
+
+  if (length > 20 && length < 40) {
+    systemResponse.textContent = "INPUT DETECTED…";
+  }
+
+  if (length > 60) {
+    systemResponse.textContent = "PROCESSING EMOTIONAL DATA…";
+  }
+
+  if (length > 120) {
+    systemResponse.textContent = "INPUT ACCEPTED.";
+  }
+});
+
 });
