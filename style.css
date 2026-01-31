@@ -1,8 +1,9 @@
 body {
   background: black;
   color: #e5e5e5;
-  font-family: monospace;
+  font-family: 'JetBrains Mono', monospace;
   margin: 0;
+  letter-spacing: -0.2px;
 }
 
 .page {
