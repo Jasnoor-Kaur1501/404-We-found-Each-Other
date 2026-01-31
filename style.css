@@ -26,6 +26,29 @@ h1 {
   text-decoration: none;
 }
 
+.page {
+  max-width: 900px;
+  padding: 80px 40px;
+}
+
+.block {
+  margin: 80px 0;
+}
+
+.block img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.block p {
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+
 h1, h2, h3 {
   letter-spacing: -0.5px;
 }
