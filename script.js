@@ -72,23 +72,43 @@ window.addEventListener("scroll", () => {
   }
 });
 
-  const terminalInput = document.getElementById("terminal-input");
+const terminalInput = document.getElementById("terminal-input");
 const systemResponse = document.getElementById("system-response");
 
+// 🔹 Restore saved text on load
+const savedText = localStorage.getItem("system_input_text");
+const isLocked = localStorage.getItem("system_input_locked");
+
+if (savedText) {
+  terminalInput.innerText = savedText;
+}
+
+if (isLocked === "true") {
+  terminalInput.setAttribute("contenteditable", "false");
+  systemResponse.textContent = "INPUT SAVED. NO FURTHER CHANGES ALLOWED.";
+}
+
+// 🔹 Save text live as user types
 terminalInput.addEventListener("input", () => {
+  localStorage.setItem("system_input_text", terminalInput.innerText);
+
   const length = terminalInput.innerText.length;
 
-  if (length > 20 && length < 40) {
+  if (length > 20 && length < 60) {
     systemResponse.textContent = "INPUT DETECTED…";
-  }
-
-  if (length > 60) {
+  } else if (length >= 60 && length < 120) {
     systemResponse.textContent = "PROCESSING EMOTIONAL DATA…";
-  }
-
-  if (length > 120) {
+  } else if (length >= 120) {
     systemResponse.textContent = "INPUT ACCEPTED.";
   }
 });
+
+// 🔹 Lock input permanently when user clicks away
+terminalInput.addEventListener("blur", () => {
+  terminalInput.setAttribute("contenteditable", "false");
+  localStorage.setItem("system_input_locked", "true");
+  systemResponse.textContent = "INPUT SAVED. NO FURTHER CHANGES ALLOWED.";
+});
+
 
 });
