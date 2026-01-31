@@ -85,4 +85,27 @@ section {
   }
 }
 
+.write {
+  min-height: 100vh;
+  padding: 80px 40px;
+  font-family: monospace;
+}
+
+.prompt {
+  color: #9aa0a6;
+  margin-bottom: 12px;
+}
+
+textarea {
+  width: 100%;
+  max-width: 600px;
+  height: 200px;
+  background: black;
+  color: #00ff9c;
+  border: 1px solid #2e2e2e;
+  padding: 12px;
+  font-family: monospace;
+  font-size: 14px;
+  resize: none;
+}
 
