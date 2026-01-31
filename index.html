@@ -32,9 +32,10 @@
     <p>LOG_256: Still running.</p>
   </section>
 
-  <section class="write hidden">
+<section class="write hidden">
   <p class="prompt">SYSTEM INPUT ENABLED</p>
-  <textarea id="note" placeholder="Say something you never wrote anywhere else..."></textarea>
+  <div id="terminal-input" contenteditable="true"></div>
+  <p id="system-response" class="system-msg"></p>
 </section>
 
   <section class="final hidden">
@@ -42,6 +43,7 @@
     <p>UPTIME: 365 DAYS</p>
     <p id="typed"></p>
   </section>
+  
 
   <audio id="bg-music" loop>
   <source src="song.mp3" type="audio/mpeg">
