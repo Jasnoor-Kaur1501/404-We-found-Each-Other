@@ -2,32 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>404</title>
+  <title>404 Not Found</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="terminal">
-    <h1 id="code">404</h1>
-    <p id="line">Something went wrong.</p>
-  </div>
+  <main class="error">
+    <h1>404</h1>
+    <p class="subtitle">This page could not be found.</p>
+    <p id="system-line" class="system">The requested URL was not found on this server.</p>
+  </main>
 
-  <section class="log">
-    <img src="images/1.jpg" alt="memory 1">
+  <!-- Hidden content -->
+  <section class="log hidden">
+    <img src="images/1.jpg" />
     <p>LOG_042: Reconnected after silence.</p>
   </section>
 
-  <section class="log">
-    <img src="images/2.jpg" alt="memory 2">
-    <p>LOG_117: Stayed despite instability.</p>
+  <section class="log hidden">
+    <img src="images/2.jpg" />
+    <p>LOG_117: Stability not expected.</p>
   </section>
 
-  <section class="log">
-    <img src="images/3.jpg" alt="memory 3">
-    <p>LOG_256: Growth detected.</p>
+  <section class="log hidden">
+    <img src="images/3.jpg" />
+    <p>LOG_256: Still running.</p>
   </section>
 
-  <section class="final">
+  <section class="final hidden">
     <p>STATUS: STABLE</p>
     <p>UPTIME: 365 DAYS</p>
     <p id="typed"></p>
