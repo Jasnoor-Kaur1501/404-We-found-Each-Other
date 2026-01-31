@@ -49,4 +49,27 @@ window.addEventListener("scroll", () => {
     started = true;
     typeText();
   }
+
+  // 🎧 Background music fade-in
+const music = document.getElementById("bg-music");
+let musicStarted = false;
+
+window.addEventListener("scroll", () => {
+  if (!musicStarted && window.scrollY > window.innerHeight) {
+    music.volume = 0;
+    music.play();
+    musicStarted = true;
+
+    let vol = 0;
+    const fadeIn = setInterval(() => {
+      if (vol < 0.4) {
+        vol += 0.02;
+        music.volume = vol;
+      } else {
+        clearInterval(fadeIn);
+      }
+    }, 200);
+  }
+});
+
 });
