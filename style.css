@@ -25,3 +25,8 @@ h1 {
   color: #00ff9c;
   text-decoration: none;
 }
+
+h1, h2, h3 {
+  letter-spacing: -0.5px;
+}
+
