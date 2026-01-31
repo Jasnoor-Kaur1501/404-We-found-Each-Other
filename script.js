@@ -1,48 +1,45 @@
-// DevTools Easter Egg
-console.log(
-  "%cIf you're reading this, I still choose you.",
-  "color:#00ff9c; font-size:14px;"
-);
-
-const line = document.getElementById("line");
+const systemLine = document.getElementById("system-line");
 const logs = document.querySelectorAll(".log");
+const finalSection = document.querySelector(".final");
 const typed = document.getElementById("typed");
 
-// Initial text change
+// Step 1: Fake error → doubt
 setTimeout(() => {
-  line.textContent = "But somehow, we didn’t.";
-}, 2000);
+  systemLine.textContent = "But somehow, it didn’t fail.";
+}, 2200);
 
-// Scroll reveal for logs
+// Step 2: Reveal scroll + content
+setTimeout(() => {
+  logs.forEach(log => log.classList.remove("hidden"));
+  finalSection.classList.remove("hidden");
+  document.body.style.overflowY = "auto";
+}, 3500);
+
+// Scroll reveal
 window.addEventListener("scroll", () => {
   logs.forEach(log => {
-    if (log.getBoundingClientRect().top < window.innerHeight - 100) {
+    if (log.getBoundingClientRect().top < window.innerHeight * 0.85) {
       log.classList.add("visible");
     }
   });
 });
 
 // Typing effect
-const finalMessage = "I’d reboot this life with you every time.";
-let index = 0;
-let typedOnce = false;
+const message = "I’d reboot this life with you every time.";
+let i = 0;
+let started = false;
 
 function typeText() {
-  if (index < finalMessage.length) {
-    typed.textContent += finalMessage.charAt(index);
-    index++;
+  if (i < message.length) {
+    typed.textContent += message.charAt(i);
+    i++;
     setTimeout(typeText, 80);
   }
 }
 
-// Trigger typing once
 window.addEventListener("scroll", () => {
-  const finalSection = document.querySelector(".final");
-  if (
-    !typedOnce &&
-    finalSection.getBoundingClientRect().top < window.innerHeight
-  ) {
-    typedOnce = true;
+  if (!started && finalSection.getBoundingClientRect().top < window.innerHeight) {
+    started = true;
     typeText();
   }
 });
