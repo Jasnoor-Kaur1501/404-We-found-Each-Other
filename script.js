@@ -1,21 +1,27 @@
+// ===== ELEMENTS =====
 const systemLine = document.getElementById("system-line");
 const logs = document.querySelectorAll(".log");
 const finalSection = document.querySelector(".final");
 const typed = document.getElementById("typed");
+const writeSection = document.querySelector(".write");
+const terminalInput = document.getElementById("terminal-input");
+const systemResponse = document.getElementById("system-response");
+const music = document.getElementById("bg-music");
 
-// Step 1: Fake error → doubt
+// ===== STEP 1: FAKE ERROR TEXT =====
 setTimeout(() => {
   systemLine.textContent = "Unexpected persistence detected.";
 }, 2200);
 
-// Step 2: Reveal scroll + content
+// ===== STEP 2: REVEAL CONTENT =====
 setTimeout(() => {
   logs.forEach(log => log.classList.remove("hidden"));
   finalSection.classList.remove("hidden");
+  writeSection.classList.remove("hidden");
   document.body.style.overflowY = "auto";
 }, 3500);
 
-// Scroll reveal
+// ===== SCROLL-BASED LOG REVEAL =====
 window.addEventListener("scroll", () => {
   logs.forEach(log => {
     if (log.getBoundingClientRect().top < window.innerHeight * 0.85) {
@@ -23,35 +29,28 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-;
 
-// Typing effect
+// ===== TYPING EFFECT =====
 const message = "I’d reboot this life with you every time.";
-let i = 0;
-let started = false;
+let typeIndex = 0;
+let typingStarted = false;
 
 function typeText() {
-  if (i < message.length) {
-    typed.textContent += message.charAt(i);
-    i++;
+  if (typeIndex < message.length) {
+    typed.textContent += message.charAt(typeIndex);
+    typeIndex++;
     setTimeout(typeText, 80);
   }
 }
 
-const writeSection = document.querySelector(".write");
-
-setTimeout(() => {
-  writeSection.classList.remove("hidden");
-}, 4200);
-
 window.addEventListener("scroll", () => {
-  if (!started && finalSection.getBoundingClientRect().top < window.innerHeight) {
-    started = true;
+  if (!typingStarted && finalSection.getBoundingClientRect().top < window.innerHeight) {
+    typingStarted = true;
     typeText();
   }
+});
 
-  // 🎧 Background music fade-in
-const music = document.getElementById("bg-music");
+// ===== BACKGROUND MUSIC (FADE-IN) =====
 let musicStarted = false;
 
 window.addEventListener("scroll", () => {
@@ -72,10 +71,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-const terminalInput = document.getElementById("terminal-input");
-const systemResponse = document.getElementById("system-response");
-
-// 🔹 Restore saved text on load
+// ===== TERMINAL INPUT (PERSISTENT) =====
 const savedText = localStorage.getItem("system_input_text");
 const isLocked = localStorage.getItem("system_input_locked");
 
@@ -88,7 +84,6 @@ if (isLocked === "true") {
   systemResponse.textContent = "INPUT SAVED. NO FURTHER CHANGES ALLOWED.";
 }
 
-// 🔹 Save text live as user types
 terminalInput.addEventListener("input", () => {
   localStorage.setItem("system_input_text", terminalInput.innerText);
 
@@ -98,12 +93,3 @@ terminalInput.addEventListener("input", () => {
     systemResponse.textContent = "INPUT DETECTED…";
   } else if (length >= 60 && length < 120) {
     systemResponse.textContent = "PROCESSING EMOTIONAL DATA…";
-  } else if (length >= 120) {
-    systemResponse.textContent = "INPUT ACCEPTED.";
-  }
-});
-
-
-
-
-});
