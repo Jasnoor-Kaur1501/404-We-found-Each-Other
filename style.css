@@ -4,43 +4,46 @@
 
 body {
   margin: 0;
-  background: #000;
-  color: #00ff9c;
-  font-family: monospace;
+  background: #0a0a0a;
+  color: #e5e5e5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, monospace;
 }
 
-.terminal {
+/* Real 404 look */
+.error {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 40px;
 }
 
-#code {
-  font-size: 72px;
+.error h1 {
+  font-size: 96px;
   margin: 0;
+  font-weight: 600;
 }
 
-#line {
-  opacity: 0.8;
+.subtitle {
+  font-size: 20px;
+  margin-top: 8px;
 }
 
+.system {
+  margin-top: 24px;
+  color: #9aa0a6;
+  font-size: 14px;
+}
+
+/* Hidden storytelling sections */
 section {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  padding: 80px 40px;
 }
 
 .log img {
-  width: 280px;
-  border-radius: 10px;
+  width: 260px;
+  border-radius: 6px;
   margin-bottom: 12px;
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(30px);
   transition: all 0.8s ease;
 }
 
@@ -49,6 +52,10 @@ section {
   transform: translateY(0);
 }
 
+.hidden {
+  display: none;
+}
+
 .final {
-  padding-bottom: 80px;
+  font-family: monospace;
 }
