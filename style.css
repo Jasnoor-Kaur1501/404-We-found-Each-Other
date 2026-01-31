@@ -48,6 +48,17 @@ h1 {
   font-size: 15px;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 h1, h2, h3 {
   letter-spacing: -0.5px;
