@@ -96,16 +96,24 @@ section {
   margin-bottom: 12px;
 }
 
-textarea {
+#terminal-input {
   width: 100%;
-  max-width: 600px;
-  height: 200px;
+  max-width: 700px;
+  min-height: 180px;
+  padding: 16px;
+  border: 1px solid #2e2e2e;
   background: black;
   color: #00ff9c;
-  border: 1px solid #2e2e2e;
-  padding: 12px;
   font-family: monospace;
   font-size: 14px;
-  resize: none;
+  outline: none;
+  caret-color: #00ff9c;
 }
+
+.system-msg {
+  margin-top: 12px;
+  color: #9aa0a6;
+  font-size: 12px;
+}
+
 
