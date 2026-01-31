@@ -23,6 +23,7 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+;
 
 // Typing effect
 const message = "I’d reboot this life with you every time.";
@@ -36,6 +37,12 @@ function typeText() {
     setTimeout(typeText, 80);
   }
 }
+
+const writeSection = document.querySelector(".write");
+
+setTimeout(() => {
+  writeSection.classList.remove("hidden");
+}, 4200);
 
 window.addEventListener("scroll", () => {
   if (!started && finalSection.getBoundingClientRect().top < window.innerHeight) {
