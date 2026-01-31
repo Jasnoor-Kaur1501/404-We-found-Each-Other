@@ -5,7 +5,7 @@ const typed = document.getElementById("typed");
 
 // Step 1: Fake error → doubt
 setTimeout(() => {
-  systemLine.textContent = "But somehow, it didn’t fail.";
+  ssystemLine.textContent = "Unexpected persistence detected.";
 }, 2200);
 
 // Step 2: Reveal scroll + content
